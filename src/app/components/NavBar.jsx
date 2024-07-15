@@ -2,6 +2,8 @@
 import React,{useState} from "react";
 import Link from "next/link";
 import NavLink from "./NavLink"
+import {Bars3Icon,XmarkIcon } from "@heroicons/react/24/solid"
+
 const NavBar = () => {
 const [navbarOpen, setNavbarOpen] = useState(false)
     const navLinks= [
@@ -29,7 +31,10 @@ const [navbarOpen, setNavbarOpen] = useState(false)
           LOGO
         </Link>
 <div className=" mobile-menu block md:hidden">
-
+{
+  navbarOpen ? ( <button className="flex px-3 py-2 item-center border border-slate-200 text-slate-200 hover:text-white hover:border-white "> <Bars3Icon className="h-5 w-5"/></button>) 
+  : ( <button className="flex px-3 py-2 item-center border border-slate-200 text-slate-200 hover:text-white hover:border-white "> <XmarkIcon className="h-5 w-5"/></button>) )
+}
 </div>
         <div className="menu  hidden md:block md:w-auto" id="navbar">
           <ul className="flex md:flex-row p-2 md:p-0 md:space-x-8 mt-0">
